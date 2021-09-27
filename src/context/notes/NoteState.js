@@ -34,13 +34,14 @@ const NoteState = (props) => {
       },
       body: JSON.stringify({ title, description, tag }),
     });
-
+    const json = response.json();
+    console.log(json);
     const note = {
       _id: "6142b19c82a879d123243e18b6",
       user: "6140181d406b54c742c2a013[added]",
-      title: "new vikas notes",
-      description: "good morning",
-      tag: "udaipur",
+      title: title,
+      description: description,
+      tag: tag,
       date: "2021-09-16T02:53:16.448Z",
       __v: 0,
     };
@@ -48,7 +49,19 @@ const NoteState = (props) => {
   };
 
   //Delete a Note
-  const deleteNote = (id) => {
+  const deleteNote = async (id) => {
+    // API Call
+    const response = await fetch(`${host}/api/notes/deletenote/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token":
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjE0MDE4MWQ0MDZiNTRjNzQyYzJhMDEzIn0sImlhdCI6MTYzMTU5ODM1MX0.e-MB2YJ2t0LsGH3O593Kl5tUTD-07RD-hI5ScUyFA14",
+      },
+    });
+    const json = response.json();
+    console.log(json);
+
     console.log("delete note id" + id);
     const newNote = notes.filter((note) => {
       return note._id !== id;

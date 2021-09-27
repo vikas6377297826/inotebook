@@ -14,8 +14,10 @@ const Noteitem = (props) => {
           <i
             className="far fa-trash-alt mx-2"
             onClick={() => deleteNote(note._id)}
-          ></i>
-          <i className="far fa-edit mx-2"></i>
+          >
+            D
+          </i>
+          <i className="far fa-edit mx-2">E</i>
         </div>
       </div>
     </div>
