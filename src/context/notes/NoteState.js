@@ -82,7 +82,6 @@ const NoteState = (props) => {
       },
       body: JSON.stringify({ title, description, tag }),
     });
-
     //logic to edit notes
     for (let index = 0; index < notes.length; index++) {
       const element = notes[index];
