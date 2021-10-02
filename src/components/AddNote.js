@@ -35,8 +35,6 @@ const AddNote = () => {
             aria-describedby="emailHelp"
             onChange={onChange}
             value={note.title}
-            minLength={5}
-            required
           />
         </div>
         <div className="mb-3">
@@ -50,8 +48,6 @@ const AddNote = () => {
             value={note.description}
             name="description"
             onChange={onChange}
-            minLength={5}
-            required
           />
         </div>
         <div className="mb-3">
